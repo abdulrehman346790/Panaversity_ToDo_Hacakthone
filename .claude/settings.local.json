@@ -1,0 +1,42 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(.specify/scripts/bash/create-phr.sh --title \"Create initial project constitution\" --stage constitution --json)",
+      "Bash(git rev-parse --abbrev-ref HEAD)",
+      "Bash(git fetch --all --prune)",
+      "Bash(ls -d specs/[0-9]+-basic-task-crud)",
+      "Bash(.specify/scripts/bash/create-new-feature.sh --json \"Feature: Basic Task CRUD Operations. Requirements:\n\nAdd, View, Update, Delete, and Toggle Complete tasks.\n\nUse a simple loop for the CLI menu.\n\nRefer to the core-crud-skill for function signatures.\n\nView list should show ID, Status [x], and Title.\" --number 1 --short-name \"basic-task-crud\")",
+      "Bash(.specify/scripts/bash/create-phr.sh --title \"Basic Task CRUD Operations\" --stage spec --feature 001-basic-task-crud --json)",
+      "Bash(.specify/scripts/bash/setup-plan.sh --json)",
+      "SlashCommand(/sp.tasks)",
+      "Bash(.specify/scripts/bash/create-phr.sh --title \"Generate basic task list\" --stage tasks --feature 001-basic-task-crud --json)",
+      "Bash(.specify/scripts/bash/check-prerequisites.sh --json --require-tasks --include-tasks)",
+      "Bash(git rev-parse --git-dir)",
+      "SlashCommand(/sp.phr)",
+      "Bash(.specify/scripts/bash/create-phr.sh --title \"Implement basic task CRUD\" --stage green --feature 001-basic-task-crud --json)",
+      "Bash(.specify/scripts/bash/create-phr.sh --title \"Migrate to Full-Stack Web App\" --stage refactor --feature 001-basic-task-crud --json)",
+      "Bash(.specify/scripts/bash/create-phr.sh --title \"Create frontend service skill\" --stage green --feature 001-basic-task-crud --json)",
+      "Bash(ls -d specs/[0-9]+-phase2-backend-api)",
+      "Bash(git add .)",
+      "Bash(git commit -m \"feat: Implement the frontend service skill\")",
+      "Bash(git config --global user.email \"claude-code@anthropic.com\")",
+      "Bash(git config --global user.name \"Claude Code\")",
+      "Bash(git checkout 001-basic-task-crud)",
+      "Bash(git checkout master)",
+      "Bash(.specify/scripts/bash/create-phr.sh:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(.specify/scripts/bash/check-prerequisites.sh:*)",
+      "Bash(npx create-next-app@latest:*)",
+      "Bash(npm install:*)",
+      "SlashCommand(/sp.phr:*)",
+      "Bash(git config:*)",
+      "SlashCommand(/sp.git.commit_pr)",
+      "Bash(git --version)",
+      "Bash(git rev-parse:*)",
+      "Bash(git push -u origin 002-todo-frontend-ui)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
