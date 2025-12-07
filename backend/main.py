@@ -2,20 +2,15 @@ from fastapi import FastAPI, Depends, HTTPException
 from sqlmodel import Session, SQLModel, Field
 from typing import List, Optional
 
-# Assuming Task model is defined in models.py
-from .models import Task
-
-# Assuming database engine and session management in database.py
-from .database import create_db_and_tables, get_session
-
-# Assuming core-crud-skill functions are available via a local wrapper
-from .core_crud_skill_wrapper import (
+# NEW (Correct)
+from models import Task
+from database import create_db_and_tables, get_session
+from core_crud_skill_wrapper import (
     add_task_db,
     get_tasks_db,
     update_task_db,
     delete_task_db
 )
-
 app = FastAPI()
 
 @app.on_event("startup")
